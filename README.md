@@ -12,3 +12,8 @@ tutorial: <https://testdriven.io/blog/python-webassembly/>
 * <https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/codemirror.min.js>
 * <https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/mode/python/python.min.js>
 * <https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.3/theme/dracula.css>
+
+
+# TODO
+
+- [ ] <https://pyodide.org/en/stable/usage/loading-packages.html>

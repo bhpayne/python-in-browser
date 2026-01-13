@@ -32,8 +32,14 @@ function clearHistory() {
 // init pyodide and show sys.version when it's loaded successfully
 async function main() {
   let pyodide = await loadPyodide({
-    indexURL: "https://cdn.jsdelivr.net/pyodide/v0.20.0/full/",
+    //indexURL: "https://cdn.jsdelivr.net/pyodide/v0.20.0/full/",
+    //indexURL: "https://bhpayne.github.io/python-in-browser/"
+    indexURL: ".",
   });
+
+  output.value += "Loading Numpy...\n";
+  await pyodide.loadPackage("numpy");
+
   output.value = pyodide.runPython(`
     import sys
     sys.version
