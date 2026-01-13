@@ -40,7 +40,7 @@ async function main() {
   output.value += "Loading Numpy...\n";
   await pyodide.loadPackage("numpy");
 
-  output.value = pyodide.runPython(`
+  output.value += pyodide.runPython(`
     import sys
     sys.version
   `);
@@ -55,6 +55,8 @@ let pyodideReadyPromise = main();
 async function evaluatePython() {
   let pyodide = await pyodideReadyPromise;
   try {
+    await pyodide.loadPackagesFromImports(code);
+
     pyodide.runPython(`
       import io
       sys.stdout = io.StringIO()
